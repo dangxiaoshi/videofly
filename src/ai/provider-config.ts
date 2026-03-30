@@ -1,6 +1,6 @@
 import type { ProviderType } from "./types";
 
-export const AI_PROVIDERS = ["evolink", "kie", "apimart"] as const;
+export const AI_PROVIDERS = ["evolink", "kie", "apimart", "volcengine"] as const;
 
 export function parseProviderType(
   value: string | null | undefined
@@ -36,6 +36,8 @@ export function getProviderApiKey(
       return process.env.KIE_API_KEY;
     case "apimart":
       return process.env.APIMART_API_KEY;
+    case "volcengine":
+      return process.env.VOLCENGINE_ACCESS_KEY;
     default:
       return undefined;
   }

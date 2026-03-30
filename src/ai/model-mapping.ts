@@ -46,6 +46,7 @@ export interface ModelMapping {
     evolink?: ProviderModelConfig;
     kie?: ProviderModelConfig;
     apimart?: ProviderModelConfig;
+    volcengine?: ProviderModelConfig;
   };
 }
 
@@ -451,6 +452,20 @@ export const MODEL_MAPPINGS: Record<string, ModelMapping> = {
   },
 
   // -------------------------------------------------------------------------
+  // Seedance 3.0 1080P (Volcengine direct)
+  // -------------------------------------------------------------------------
+  "jimeng-video-3.0-1080p": {
+    internalId: "jimeng-video-3.0-1080p",
+    displayName: "即梦视频 3.0 1080P",
+    providers: {
+      volcengine: {
+        providerModelId: "jimeng_video_t2v_3p0_1080p",
+        supported: true,
+      },
+    },
+  },
+
+  // -------------------------------------------------------------------------
   // Seedance 1.0 Pro Fast (APImart only)
   // -------------------------------------------------------------------------
   "seedance-1.0-pro-fast": {
@@ -512,6 +527,9 @@ const MODEL_MODE_SUPPORT: Record<
   },
   "seedance-1.0-pro-quality": {
     apimart: ["text-to-video", "image-to-video"],
+  },
+  "jimeng-video-3.0-1080p": {
+    volcengine: ["text-to-video", "image-to-video"],
   },
 };
 

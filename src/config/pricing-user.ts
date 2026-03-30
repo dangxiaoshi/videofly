@@ -280,6 +280,13 @@ export const VIDEO_MODEL_PRICING: Record<string, VideoModelPricing> = {
     enabled: true,
   },
 
+  /** 即梦视频 3.0 1080P - 火山引擎直连 */
+  "jimeng-video-3.0-1080p": {
+    baseCredits: 0,
+    perSecond: 4,
+    enabled: true,
+  },
+
   /** Veo 3.1 Fast Lite - Google (暂时隐藏) */
   "veo-3.1": {
     baseCredits: 10,

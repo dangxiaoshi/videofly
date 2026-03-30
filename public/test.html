@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>即梦视频测试</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 60px auto; padding: 20px; }
+    textarea { width: 100%; height: 80px; font-size: 16px; padding: 8px; box-sizing: border-box; }
+    button { margin-top: 10px; padding: 10px 24px; font-size: 16px; background: #f59e0b; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    #status { margin-top: 20px; padding: 12px; background: #f3f4f6; border-radius: 6px; white-space: pre-wrap; word-break: break-all; min-height: 40px; }
+    video { margin-top: 16px; width: 100%; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h2>即梦视频 3.0 测试</h2>
+  <textarea id="prompt" placeholder="输入视频描述，例如：a calm mountain lake at golden hour, cinematic"></textarea>
+  <br>
+  <button id="btn" onclick="generate()">生成视频</button>
+  <div id="status">等待输入...</div>
+  <video id="video" controls style="display:none"></video>
+
+  <script>
+    let polling = null;
+
+    async function generate() {
+      const prompt = document.getElementById('prompt').value.trim();
+      if (!prompt) { alert('请输入描述'); return; }
+
+      const btn = document.getElementById('btn');
+      const status = document.getElementById('status');
+      const video = document.getElementById('video');
+
+      btn.disabled = true;
+      video.style.display = 'none';
+      status.textContent = '提交中...';
+
+      try {
+        const res = await fetch('http://localhost:3001/api/v1/video/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            prompt,
+            model: 'seedance-1.5-pro',
+            duration: 5,
+            aspectRatio: '16:9',
+          }),
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error?.message || '提交失败');
+
+        const { videoUuid } = data.data;
+        status.textContent = `任务已提交\nvideoUuid: ${videoUuid}\n\n轮询状态中...`;
+
+        // 开始轮询
+        pollStatus(videoUuid);
+
+      } catch (e) {
+        status.textContent = '❌ 错误: ' + e.message;
+        btn.disabled = false;
+      }
+    }
+
+    async function pollStatus(uuid) {
+      const status = document.getElementById('status');
+      const btn = document.getElementById('btn');
+      const video = document.getElementById('video');
+
+      const check = async () => {
+        try {
+          const res = await fetch(`http://localhost:3001/api/v1/video/${uuid}/status`);
+          const data = await res.json();
+          const s = data?.data;
+
+          status.textContent = `状态: ${s?.status}\n进度: ${s?.progress ?? '-'}\n${s?.error ? '错误: ' + JSON.stringify(s.error) : ''}`;
+
+          if (s?.status === 'COMPLETED' && s?.videoUrl) {
+            clearInterval(polling);
+            video.src = s.videoUrl;
+            video.style.display = 'block';
+            status.textContent = '✅ 生成完成！';
+            btn.disabled = false;
+          } else if (s?.status === 'FAILED') {
+            clearInterval(polling);
+            status.textContent = '❌ 生成失败: ' + JSON.stringify(s?.error);
+            btn.disabled = false;
+          }
+        } catch (e) {
+          status.textContent = '轮询出错: ' + e.message;
+        }
+      };
+
+      check();
+      polling = setInterval(check, 3000);
+    }
+  </script>
+</body>
+</html>

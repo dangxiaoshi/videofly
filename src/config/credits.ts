@@ -218,6 +218,16 @@ export const CREDITS_CONFIG = {
             aspectRatios: ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"],
             qualities: ["480P", "720P", "1080P"],
           },
+          "jimeng-video-3.0-1080p": {
+            id: "jimeng-video-3.0-1080p",
+            name: "即梦视频 3.0 720P",
+            provider: "volcengine" as const,
+            description: "models.jimeng30.description",
+            supportImageToVideo: true,
+            maxDuration: 8,
+            durations: [5, 8],
+            aspectRatios: ["16:9", "9:16", "1:1", "4:3", "3:4"],
+          },
         };
 
         const baseConfig = baseConfigs[modelId];

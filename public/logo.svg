@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect x="0" y="0" width="512" height="512" rx="80" ry="80" fill="#1a7a42"/>
-  <text x="256" y="256" text-anchor="middle" dominant-baseline="central"
-    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
-    font-size="220" font-weight="bold" fill="#ffffff">VF</text>
+  <rect x="0" y="0" width="512" height="512" rx="80" ry="80" fill="#f5c518"/>
+  <!-- Microphone body -->
+  <rect x="196" y="100" width="120" height="190" rx="60" ry="60" fill="#1a1208"/>
+  <!-- Mic grill lines -->
+  <line x1="220" y1="160" x2="292" y2="160" stroke="#f5c518" stroke-width="8" stroke-linecap="round"/>
+  <line x1="212" y1="185" x2="300" y2="185" stroke="#f5c518" stroke-width="8" stroke-linecap="round"/>
+  <line x1="220" y1="210" x2="292" y2="210" stroke="#f5c518" stroke-width="8" stroke-linecap="round"/>
+  <!-- Stand arms -->
+  <path d="M 148 260 Q 148 360 256 360 Q 364 360 364 260" fill="none" stroke="#1a1208" stroke-width="22" stroke-linecap="round"/>
+  <!-- Stand pole -->
+  <line x1="256" y1="360" x2="256" y2="420" stroke="#1a1208" stroke-width="22" stroke-linecap="round"/>
+  <!-- Base -->
+  <line x1="186" y1="420" x2="326" y2="420" stroke="#1a1208" stroke-width="22" stroke-linecap="round"/>
 </svg>

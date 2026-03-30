@@ -52,3 +52,4 @@ package-lock.json
 
 .env
 .contentlayer/
+.gstack/

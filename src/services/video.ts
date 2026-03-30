@@ -184,30 +184,35 @@ export class VideoService {
     }
 
     let freezeResult: { success: boolean; holdId: number };
-    try {
-      freezeResult = await creditService.freeze({
-        userId: params.userId,
-        credits: creditsRequired,
-        videoUuid: videoResult.uuid,
-      });
-    } catch (error) {
-      await db
-        .update(videos)
-        .set({
-          status: VideoStatus.FAILED,
-          errorMessage: String(error),
-          updatedAt: new Date(),
-        })
-        .where(eq(videos.uuid, videoResult.uuid));
 
-      const insufficientCreditsError = this.toInsufficientCreditsApiError(
-        error,
-        creditsRequired
-      );
-      if (insufficientCreditsError) {
-        throw insufficientCreditsError;
+    if (process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production") {
+      freezeResult = { success: true, holdId: 0 };
+    } else {
+      try {
+        freezeResult = await creditService.freeze({
+          userId: params.userId,
+          credits: creditsRequired,
+          videoUuid: videoResult.uuid,
+        });
+      } catch (error) {
+        await db
+          .update(videos)
+          .set({
+            status: VideoStatus.FAILED,
+            errorMessage: String(error),
+            updatedAt: new Date(),
+          })
+          .where(eq(videos.uuid, videoResult.uuid));
+
+        const insufficientCreditsError = this.toInsufficientCreditsApiError(
+          error,
+          creditsRequired
+        );
+        if (insufficientCreditsError) {
+          throw insufficientCreditsError;
+        }
+        throw error;
       }
-      throw error;
     }
 
     if (!freezeResult.success) {
@@ -268,7 +273,9 @@ export class VideoService {
         creditsUsed: creditsRequired,
       };
     } catch (error) {
-      await creditService.release(videoResult.uuid);
+      if (!(process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production")) {
+        await creditService.release(videoResult.uuid);
+      }
 
       await db
         .update(videos)
@@ -349,11 +356,14 @@ export class VideoService {
     }
 
     if (video.externalTaskId && video.provider) {
+      console.log(`[refreshStatus] Querying provider=${video.provider} taskId=${video.externalTaskId}`);
       try {
         const provider = getProvider(video.provider as ProviderType);
         const result = await provider.getTaskStatus(video.externalTaskId);
+        console.log(`[refreshStatus] Provider result:`, JSON.stringify(result));
 
         if (result.status === "completed" && result.videoUrl) {
+          console.log(`[refreshStatus] Completing generation for ${video.uuid}`);
           const updated = await this.tryCompleteGeneration(video.uuid, result);
           return {
             status: updated.status,
@@ -382,7 +392,7 @@ export class VideoService {
           return { status: VideoStatus.GENERATING };
         }
       } catch (error) {
-        console.error("Failed to refresh status from provider:", error);
+        console.error("[refreshStatus] Failed to refresh status from provider:", error);
       }
     }
 
@@ -447,21 +457,29 @@ export class VideoService {
         })
         .where(eq(videos.uuid, videoUuid));
 
-      const storage = getStorage();
-      const key = `videos/${videoUuid}/${Date.now()}.mp4`;
-      const uploaded = await storage.downloadAndUpload({
-        sourceUrl: result.videoUrl!,
-        key,
-        contentType: "video/mp4",
-      });
+      let finalVideoUrl = result.videoUrl!;
+      try {
+        const storage = getStorage();
+        const key = `videos/${videoUuid}/${Date.now()}.mp4`;
+        const uploaded = await storage.downloadAndUpload({
+          sourceUrl: result.videoUrl!,
+          key,
+          contentType: "video/mp4",
+        });
+        finalVideoUrl = uploaded.url;
+      } catch (storageError) {
+        console.warn("Storage upload failed, using original URL:", storageError);
+      }
 
-      await creditService.settle(videoUuid);
+      if (!(process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production")) {
+        await creditService.settle(videoUuid);
+      }
 
       await trx
         .update(videos)
         .set({
           status: VideoStatus.COMPLETED,
-          videoUrl: uploaded.url,
+          videoUrl: finalVideoUrl,
           thumbnailUrl: result.thumbnailUrl || null,
           completedAt: new Date(),
           updatedAt: new Date(),
@@ -472,11 +490,12 @@ export class VideoService {
         userId: video.userId,
         videoUuid,
         status: "COMPLETED",
-        videoUrl: uploaded.url,
+        videoUrl: finalVideoUrl,
         thumbnailUrl: result.thumbnailUrl || null,
       });
 
-      return { status: VideoStatus.COMPLETED, videoUrl: uploaded.url };
+      console.log(`[tryCompleteGeneration] Done. finalVideoUrl=${finalVideoUrl}`);
+      return { status: VideoStatus.COMPLETED, videoUrl: finalVideoUrl };
     });
   }
 

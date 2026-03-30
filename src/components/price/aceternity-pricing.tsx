@@ -231,9 +231,9 @@ export function AceternityPricing({
               Email{" "}
               <a
                 className="font-medium text-primary hover:underline"
-                href="mailto:support@videofly.app"
+                href="mailto:support@podvid.uk"
               >
-                support@videofly.app
+                support@podvid.uk
               </a>{" "}
               {dictPrice.contact}
               <br />

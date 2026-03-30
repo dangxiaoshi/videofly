@@ -98,6 +98,26 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
 
   // ============================================================================
+  // Volcengine (火山引擎直连)
+  // ============================================================================
+  {
+    id: "jimeng-video-3.0-1080p",
+    name: "即梦视频 3.0",
+    icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1754894158793-1e7ef687-c3c1-4f44-8b06-d044a8121f66.svg",
+    color: "#ff6a00",
+    description: "即梦同源文生视频，1080P 高清",
+    maxDuration: "8 sec",
+    creditCost: 20,
+    durations: ["5s", "8s"],
+    aspectRatios: ["16:9", "9:16", "1:1", "4:3", "3:4"],
+    maxImages: 1,
+    imageConstraints: {
+      maxSizeMB: 10,
+      formats: ["jpg", "jpeg", "png", "webp"],
+    },
+  },
+
+  // ============================================================================
   // Hidden Models (kept for reference, filtered out by enabled: false in pricing)
   // ============================================================================
   {

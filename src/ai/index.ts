@@ -2,6 +2,7 @@ import type { AIVideoProvider, ProviderType } from "./types";
 import { EvolinkProvider } from "./providers/evolink";
 import { KieProvider } from "./providers/kie";
 import { ApimartProvider } from "./providers/apimart";
+import { VolcengineProvider } from "./providers/volcengine";
 import {
   getConfiguredAIProvider,
   requireProviderApiKey,
@@ -23,6 +24,12 @@ export function getProvider(type: ProviderType): AIVideoProvider {
     case "apimart":
       provider = new ApimartProvider(requireProviderApiKey("apimart"));
       break;
+    case "volcengine": {
+      const secretKey = process.env.VOLCENGINE_SECRET_KEY;
+      if (!secretKey) throw new Error("Missing VOLCENGINE_SECRET_KEY");
+      provider = new VolcengineProvider(requireProviderApiKey("volcengine"), secretKey);
+      break;
+    }
     default:
       throw new Error(`Unknown provider: ${type}`);
   }
