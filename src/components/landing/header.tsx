@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useTransition } from "react";
 import { Menu, Globe, Sun, Moon, Monitor } from "lucide-react";
-import { useRouter, usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -40,10 +39,11 @@ import { cn } from "@/components/ui";
 import { useCredits } from "@/stores/credits-store";
 import { headerModels, headerTools, headerDocs } from "@/config/navigation";
 import { Gem, ImagePlay, Type, Video, BookOpen } from "lucide-react";
-import { LocaleLink } from "@/i18n/navigation";
+import { LocaleLink, useLocalePathname, useLocaleRouter } from "@/i18n/navigation";
 import type { User } from "@/lib/auth/client";
 import { useSigninModal } from "@/hooks/use-signin-modal";
 import { authClient } from "@/lib/auth/client";
+import type { Locale } from "@/config/i18n-config";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ImagePlay,
@@ -55,15 +55,15 @@ export function LandingHeader({ user }: { user?: User | null }) {
   const signInModal = useSigninModal();
   const t = useTranslations();
   const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
+  const pathname = useLocalePathname();
+  const router = useLocaleRouter();
   const [isPending, startTransition] = useTransition();
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
   const handleSignOut = async () => {
     await authClient.signOut();
-    router.push(`/${locale}`);
+    router.push("/", { locale: locale as Locale });
     router.refresh();
   };
 
@@ -74,32 +74,12 @@ export function LandingHeader({ user }: { user?: User | null }) {
   }, []);
 
   // Language switcher function
-  const switchLocale = (newLocale: string) => {
+  const switchLocale = (newLocale: Locale) => {
+    if (newLocale === locale) return;
+
     startTransition(() => {
-      let newPath = pathname;
-
-      // Clean up the path by removing existing locale prefix
-      if (newPath.startsWith("/zh") || newPath.startsWith("/en")) {
-        newPath = newPath.replace(/^\/(zh|en)/, "");
-      }
-
-      // Ensure root path handling
-      if (newPath === "") newPath = "/";
-
-      // Construct new path with target locale
-      if (newLocale === "zh") {
-        if (newPath === "/") {
-          newPath = "/zh";
-        } else if (!newPath.startsWith("/zh")) {
-          newPath = `/zh${newPath}`;
-        }
-      } else {
-        // For 'en' (default), ensure no prefix
-        // newPath is already cleaned
-      }
-
-      router.push(newPath);
-      router.refresh(); // Force server components to re-render with new locale
+      router.replace(pathname, { locale: newLocale });
+      router.refresh();
     });
   };
 
@@ -228,14 +208,16 @@ export function LandingHeader({ user }: { user?: User | null }) {
                 <DropdownMenuItem
                   onClick={() => switchLocale("en")}
                   className="cursor-pointer hover:bg-accent"
+                  disabled={isPending || locale === "en"}
                 >
-                  {locale === "zh" ? "English" : "英文"}
+                  English
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => switchLocale("zh")}
                   className="cursor-pointer hover:bg-accent"
+                  disabled={isPending || locale === "zh"}
                 >
-                  {locale === "zh" ? "中文" : "中文"}
+                  中文
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -433,16 +415,28 @@ export function LandingHeader({ user }: { user?: User | null }) {
                     <Globe className="h-4 w-4" />
                     <button
                       onClick={() => switchLocale("en")}
-                      className="text-sm hover:text-foreground transition-colors"
+                      className={cn(
+                        "text-sm transition-colors",
+                        locale === "en"
+                          ? "text-foreground font-medium"
+                          : "hover:text-foreground"
+                      )}
+                      disabled={isPending || locale === "en"}
                     >
-                      {locale === "zh" ? "English" : "英文"}
+                      English
                     </button>
                     <span className="text-muted-foreground">/</span>
                     <button
                       onClick={() => switchLocale("zh")}
-                      className="text-sm hover:text-foreground transition-colors"
+                      className={cn(
+                        "text-sm transition-colors",
+                        locale === "zh"
+                          ? "text-foreground font-medium"
+                          : "hover:text-foreground"
+                      )}
+                      disabled={isPending || locale === "zh"}
                     >
-                      {locale === "zh" ? "中文" : "中文"}
+                      中文
                     </button>
                   </div>
 

@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "PodVid - AI 视频生成平台",
-    "description": "使用 Sora 2、Veo 3.1 等模型在几分钟内创建惊人的 AI 视频"
+    "title": "PodVid - 把播客变成可传播的视频",
+    "description": "几分钟内把播客内容变成短视频、字幕视频和 audiogram，适合 Shorts、Reels 和 TikTok"
   },
   "Common": {
     "login": "登录",
@@ -27,16 +27,16 @@
     "settings": "设置"
   },
   "Hero": {
-    "badge": "支持 Sora 2、Veo 3.1 等模型",
-    "title": "将您的想法转化为精彩视频",
-    "subtitle": "使用 AI",
-    "description": "在几分钟内创建专业的 AI 生成视频。支持文本转视频、图片转视频，或增强现有素材。",
+    "badge": "为 TikTok、Reels 和 Shorts 打造的播客转视频工作流",
+    "title": "把你的播客变成",
+    "subtitle": "可传播的视频",
+    "description": "上传播客内容、粘贴 transcript，或直接从一个想法开始。PodVid 可以在几分钟内把长音频变成带字幕的短视频、audiogram 和适合社媒发布的视频内容。",
     "startCreating": "免费开始创作",
     "viewExamples": "查看示例",
     "features": {
-      "fast": "闪电般快速",
-      "easy": "简单易用",
-      "ai": "AI 驱动"
+      "fast": "播客优先工作流",
+      "easy": "自动字幕与视觉",
+      "ai": "适配全渠道分发"
     },
     "stats": {
       "videos": "个视频已创建",
@@ -90,29 +90,29 @@
     "ctaButton": "立即开始创作"
   },
   "Features": {
-    "badge": "强大功能",
-    "title": "您需要的一切",
-    "subtitle": "强大的功能助您创建精彩视频",
-    "description": "探索让视频创作变得简单有趣的工具和功能",
+    "badge": "专为播客创作者打造",
+    "title": "你需要的一切",
+    "subtitle": "都为了复用每一期播客",
+    "description": "从音频或 transcript 直接生成适合发布的社媒视频，不再需要在多个工具之间来回切换",
     "learnMore": "了解更多",
     "bottomCTA": {
-      "text": "准备好将您的想法转化为视频了吗？",
+      "text": "准备好把一期播客拆成几周的社媒内容了吗？",
       "button": "立即开始创作"
     },
     "textToVideo": {
-      "title": "文本转视频",
-      "description": "使用先进的 AI 模型将文本提示转化为精彩视频",
-      "stat": "生成速度"
+      "title": "Transcript 转视频",
+      "description": "把节目文稿、show notes 或一句提示词，直接变成带字幕和节奏感的短视频草稿",
+      "stat": "首稿生成时间"
     },
     "imageToVideo": {
-      "title": "图片转视频",
-      "description": "用 AI 让您的图片动起来，赋予生命",
-      "stat": "最高分辨率"
+      "title": "Audiogram 与短视频版式",
+      "description": "生成波形视频、口播风格切片和适合 Shorts、Reels、TikTok 的竖版剪辑",
+      "stat": "导出质量"
     },
     "referenceGen": {
-      "title": "参考生成",
-      "description": "上传图片或视频作为参考，引导 AI 生成。提取镜头轨迹、运动模式和风格，实现精准控制",
-      "stat": "参考输入"
+      "title": "品牌与 B-roll 控制",
+      "description": "上传封面、Logo 或参考图片，让每条视频都更贴合你的播客品牌和单集氛围",
+      "stat": "创意控制项"
     },
     "enhancement": {
       "title": "视频增强",
@@ -120,16 +120,16 @@
       "stat": "AI 模型"
     },
     "fast": {
-      "title": "闪电般快速",
-      "description": "仅需 2-5 分钟即可生成专业视频"
+      "title": "出片更快",
+      "description": "几分钟就能拿到播客视频首稿，不必再花几个小时手动剪辑"
     },
     "secure": {
-      "title": "安全私密",
-      "description": "您的数据已加密，视频安全存储"
+      "title": "播客素材安全管理",
+      "description": "把音频、文稿和视觉素材放进一个统一且安全的工作流里"
     },
     "realtime": {
-      "title": "实时更新",
-      "description": "实时跟踪视频生成进度"
+      "title": "适合周更工作流",
+      "description": "为每一期新节目建立稳定、可重复的视频分发流程"
     },
     "formats": {
       "title": "多种格式",
@@ -141,50 +141,50 @@
     }
   },
   "HowItWorks": {
-    "badge": "简单流程",
-    "title": "使用方法",
-    "subtitle": "4 步创建您的视频",
-    "description": "使用直观的视频创作工作流程，几分钟内即可开始",
+    "badge": "简单的播客工作流",
+    "title": "PodVid 如何工作",
+    "subtitle": "4 步把单集播客变成短视频",
+    "description": "一套轻量流程，把每一期播客快速转成真正能发出去的短视频内容",
     "bottomHint": "无需信用卡 • {credits} 个免费积分开始",
     "cta": "立即开始创作",
     "steps": {
       "prompt": {
-        "title": "描述您的视频",
-        "description": "输入详细的文本提示，描述您想创建的视频",
-        "stat": "平均时间"
+        "title": "添加你的播客内容",
+        "description": "粘贴 transcript、写一段 brief，或直接指定你想剪成视频的播客片段",
+        "stat": "设置时间"
       },
       "upload": {
-        "title": "上传参考",
-        "description": "可选择添加参考图片来引导 AI（可选）",
-        "stat": "支持格式"
+        "title": "选择视觉风格",
+        "description": "上传封面、头像或参考图片，决定视频切片和 audiogram 的整体视觉方向",
+        "stat": "版式选项"
       },
       "generate": {
-        "title": "AI 生成",
-        "description": "我们的 AI 处理您的请求并创建独特视频",
-        "stat": "生成时间"
+        "title": "生成带字幕的视频切片",
+        "description": "PodVid 会自动生成带节奏、带字幕、适合短视频平台发布的社媒视频草稿",
+        "stat": "出稿时间"
       },
       "download": {
-        "title": "下载分享",
-        "description": "获取高清视频，随时随地分享",
-        "stat": "最高质量"
+        "title": "下载并发布",
+        "description": "导出完成的播客视频，直接发布到 YouTube Shorts、TikTok、Instagram Reels 等渠道",
+        "stat": "最高导出"
       }
     }
   },
   "CTA": {
-    "badge": "限时优惠",
-    "title": "准备好创作精彩视频了吗？",
-    "subtitle": "加入数千名正在使用 PodVid 的创作者",
-    "description": "立即开始使用我们的免费试用创建专业视频",
+    "badge": "免费生成你的第一期内容",
+    "title": "准备好把下一期播客变成视频了吗？",
+    "subtitle": "用 PodVid 生成 Shorts、Reels 和 TikTok 视频",
+    "description": "PodVid 帮播客创作者更快发布视频内容，不必额外雇剪辑师，也不用学习复杂的视频工具链",
     "getStarted": "免费开始",
     "learnMore": "了解更多",
     "benefits": {
       "free": "{credits} 个免费积分开始",
       "noCard": "无需信用卡",
-      "cancel": "随时取消",
-      "support": "7x24 客户支持"
+      "cancel": "适合个人创作者和团队",
+      "support": "来自 podvid.uk 的邮件支持"
     },
-    "generating": "生成中...",
-    "readyIn": "就绪时间",
+    "generating": "正在生成你的视频切片...",
+    "readyIn": "首稿预计",
     "minutes": "分钟",
     "from": "来自",
     "reviews": "条评价",
@@ -195,41 +195,50 @@
   },
   "FAQ": {
     "title": "常见问题",
-    "subtitle": "关于 PodVid 的一切",
+    "subtitle": "关于用 PodVid 把播客变成视频，你需要知道的事",
     "contact": "还有其他问题？请联系我们",
     "general": {
       "question": "什么是 PodVid？",
-      "answer": "PodVid 是一个领先的 AI 视频生成平台，让您能在几分钟内将文本和图片转化为高质量视频。由 Sora 2 和 Veo 3.1 等先进模型驱动，无需昂贵的设备即可让您的创意变为现实。"
+      "answer": "PodVid 是一个面向播客创作者的 AI 视频 SaaS。它可以把播客单集、transcript 和创意快速变成带字幕的视频切片、audiogram 和适合社媒分发的短视频。"
     },
     "commercial": {
-      "question": "我可以将视频用于商业用途吗？",
-      "answer": "可以！使用我们的专业版和团队版计划生成的视频包含完整的商业许可，您可以将其用于营销、社交媒体和商业项目中。"
+      "question": "我可以把生成的视频用于播客宣传、客户项目或赞助内容吗？",
+      "answer": "可以。只要你对上传的播客素材拥有相应权利，就可以将 PodVid 生成的视频用于节目宣传、客户交付和商业合作内容。"
     },
     "aiModels": {
-      "question": "你们使用哪些 AI 模型？",
-      "answer": "我们会集成业界最顶尖的视频生成模型，包括 Sora 2、Veo 3.1 等。我们会持续更新平台，确保为您提供最新、最强大的模型能力。"
+      "question": "PodVid 适合生成哪些播客视频？",
+      "answer": "你可以生成竖版视频切片、audiogram、带字幕的金句视频，以及适合 TikTok、Instagram Reels、YouTube Shorts 等平台发布的短视频内容。"
     },
     "credits": {
       "question": "积分系统是如何工作的？",
-      "answer": "您使用积分来生成视频。不同的模型和视频时长会消耗不同数量的积分。您可以购买积分包或订阅月度计划，以优惠价格获取稳定的积分。"
+      "answer": "每次生成播客视频都会消耗积分。更复杂的输出或更多变体会消耗更多积分，所以你可以先低成本试流程，再逐步扩大产出规模。"
     },
     "refund": {
-      "question": "提供退款吗？",
-      "answer": "我们提供满意度保证。如果因系统错误导致视频生成失败，我们将退还积分。对于订阅付款，如果您不满意，请在 7 天内联系我们的支持团队。"
+      "question": "如果生成失败怎么办？",
+      "answer": "如果是 PodVid 的系统问题导致生成失败，我们会在可行的情况下返还相应积分。如果结果异常，也可以联系支持团队协助排查。"
     },
     "support": {
       "question": "如何获取支持？",
-      "answer": "我们的专属支持团队 7x24 小时待命。您可以通过网站上的联系表格或发送邮件至 support@podvid.uk 联系我们。"
+      "answer": "发送邮件到 support@podvid.uk，并附上你的节目或生成任务信息。我们可以帮助你处理提示词设置、工作流问题和账号相关问题。"
     }
   },
   "Footer": {
     "product": "产品",
     "company": "公司",
     "legal": "法律",
+    "tagline": "把播客单集快速变成适合传播的 AI 短视频。",
+    "madeWith": "Made with",
+    "byTeam": "by PodVid Team",
     "copyright": "© {year} PodVid. 保留所有权利。",
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "cookie": "Cookie 政策"
+    "cookie": "Cookie 政策",
+    "links": {
+      "imageToVideo": "图片转视频",
+      "textToVideo": "文本转视频",
+      "referenceToVideo": "参考图转视频",
+      "pricing": "定价"
+    }
   },
   "Credits": {
     "title": "积分",

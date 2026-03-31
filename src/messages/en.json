@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "PodVid - Turn Your Podcast Into Engaging Videos",
-    "description": "Create stunning AI-generated videos in minutes with Sora 2, Veo 3.1, and more"
+    "title": "PodVid - Turn Podcasts Into Shareable Videos",
+    "description": "Convert podcast episodes into short social videos, audiograms, and captioned clips in minutes"
   },
   "Common": {
     "login": "Login",
@@ -27,16 +27,16 @@
     "settings": "Settings"
   },
   "Hero": {
-    "badge": "Powered by Sora 2, Veo 3.1 & more",
-    "title": "Transform Your Ideas Into Stunning Videos",
-    "subtitle": "with AI",
-    "description": "Create professional AI-generated videos in minutes. From text to video, image to video, or enhance existing footage.",
+    "badge": "Podcast-to-video workflow for TikTok, Reels & Shorts",
+    "title": "Turn your podcast into",
+    "subtitle": "shareable videos",
+    "description": "Upload your episode, paste a transcript, or start from a prompt. PodVid turns long-form audio into captioned clips, audiograms, and social-ready video in minutes.",
     "startCreating": "Start Creating Free",
     "viewExamples": "View Examples",
     "features": {
-      "fast": "Lightning Fast",
-      "easy": "Easy to Use",
-      "ai": "AI-Powered"
+      "fast": "Podcast-first workflow",
+      "easy": "Auto captions & visuals",
+      "ai": "Ready for every channel"
     },
     "stats": {
       "videos": "videos created",
@@ -90,29 +90,29 @@
     "ctaButton": "Start Creating Now"
   },
   "Features": {
-    "badge": "Powerful Features",
-    "title": "Everything You Need",
-    "subtitle": "Powerful features to create amazing videos",
-    "description": "Discover the tools and features that make video creation easy and fun",
+    "badge": "Built for Podcasters",
+    "title": "Everything you need",
+    "subtitle": "to repurpose every episode",
+    "description": "Go from audio or transcript to polished social video without stitching together five different tools",
     "learnMore": "Learn more",
     "bottomCTA": {
-      "text": "Ready to transform your ideas into videos?",
+      "text": "Ready to turn one episode into weeks of social content?",
       "button": "Start Creating Now"
     },
     "textToVideo": {
-      "title": "Text to Video",
-      "description": "Transform your text prompts into stunning videos using advanced AI models",
-      "stat": "Generation speed"
+      "title": "Transcript to Video",
+      "description": "Turn show notes, transcripts, or a simple prompt into short-form video drafts with captions and motion",
+      "stat": "Time to first draft"
     },
     "imageToVideo": {
-      "title": "Image to Video",
-      "description": "Animate your images and bring them to life with AI video generation",
-      "stat": "Max resolution"
+      "title": "Audiograms & Clip Layouts",
+      "description": "Generate waveform videos, talking-head style clips, and vertical edits sized for Shorts, Reels, and TikTok",
+      "stat": "Export quality"
     },
     "referenceGen": {
-      "title": "Reference Generation",
-      "description": "Upload images or videos as references to guide AI generation. Extract camera paths, motion patterns, and styles for precise control",
-      "stat": "Reference inputs"
+      "title": "Brand & B-roll Control",
+      "description": "Upload cover art, logos, or visual references so every video matches your podcast brand and episode vibe",
+      "stat": "Creative controls"
     },
     "enhancement": {
       "title": "Video Enhancement",
@@ -120,16 +120,16 @@
       "stat": "AI models"
     },
     "fast": {
-      "title": "Lightning Fast",
-      "description": "Generate professional videos in just 2-5 minutes"
+      "title": "Fast Turnaround",
+      "description": "Ship your first podcast video draft in minutes instead of spending hours editing"
     },
     "secure": {
-      "title": "Secure & Private",
-      "description": "Your data is encrypted and videos are stored securely"
+      "title": "Podcast-safe Uploads",
+      "description": "Keep your episodes, transcripts, and media organized in one secure workflow"
     },
     "realtime": {
-      "title": "Real-time Updates",
-      "description": "Track your video generation progress in real-time"
+      "title": "Built for Weekly Publishing",
+      "description": "Create a repeatable clip pipeline for every new episode you release"
     },
     "formats": {
       "title": "Multiple Formats",
@@ -141,50 +141,50 @@
     }
   },
   "HowItWorks": {
-    "badge": "Simple Process",
-    "title": "How It Works",
-    "subtitle": "Create your video in 4 simple steps",
-    "description": "Get started in minutes with our intuitive video creation workflow",
+    "badge": "Simple Podcast Workflow",
+    "title": "How PodVid works",
+    "subtitle": "from episode to clips in 4 steps",
+    "description": "A lightweight workflow for turning each podcast episode into short-form content you can actually publish",
     "bottomHint": "No credit card required • {credits} free credits to start",
     "cta": "Start Creating Now",
     "steps": {
       "prompt": {
-        "title": "Describe Your Video",
-        "description": "Enter a detailed text prompt describing the video you want to create",
-        "stat": "Average time"
+        "title": "Add your episode",
+        "description": "Paste a transcript, write a short brief, or start with the moment from your podcast you want to turn into video",
+        "stat": "Setup time"
       },
       "upload": {
-        "title": "Upload Reference",
-        "description": "Optionally add a reference image to guide the AI (optional)",
-        "stat": "Formats supported"
+        "title": "Choose the visual style",
+        "description": "Upload cover art, headshots, or reference images to shape the look of your clips and audiograms",
+        "stat": "Layout options"
       },
       "generate": {
-        "title": "AI Generates",
-        "description": "Our AI processes your request and creates a unique video",
-        "stat": "Generation time"
+        "title": "Generate captioned clips",
+        "description": "PodVid creates social-ready video drafts with motion, subtitles, and pacing optimized for short-form platforms",
+        "stat": "Draft time"
       },
       "download": {
-        "title": "Download & Share",
-        "description": "Get your HD video and share it anywhere you want",
-        "stat": "Max quality"
+        "title": "Download and publish",
+        "description": "Export polished podcast videos and post them across YouTube Shorts, TikTok, Instagram Reels, and more",
+        "stat": "Max export"
       }
     }
   },
   "CTA": {
-    "badge": "Limited Time Offer",
-    "title": "Ready to Create Amazing Videos?",
-    "subtitle": "Join thousands of creators already using PodVid",
-    "description": "Start creating professional videos today with our free trial",
+    "badge": "Launch Your First Episode Free",
+    "title": "Ready to turn your next episode into video?",
+    "subtitle": "Create clips for Shorts, Reels, and TikTok with PodVid",
+    "description": "PodVid helps podcast creators publish more video content without hiring an editor or learning a complex video stack",
     "getStarted": "Get Started Free",
     "learnMore": "Learn More",
     "benefits": {
       "free": "{credits} free credits to start",
       "noCard": "No credit card required",
-      "cancel": "Cancel anytime",
-      "support": "24/7 customer support"
+      "cancel": "Built for solo creators and teams",
+      "support": "Email support from podvid.uk"
     },
-    "generating": "Generating...",
-    "readyIn": "Ready in",
+    "generating": "Rendering your clips...",
+    "readyIn": "First draft in",
     "minutes": "minutes",
     "from": "from",
     "reviews": "reviews",
@@ -195,41 +195,50 @@
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about PodVid",
+    "subtitle": "Everything you need to know about turning podcasts into video with PodVid",
     "contact": "Still have questions? Contact us at",
     "general": {
       "question": "What is PodVid?",
-      "answer": "PodVid is a cutting-edge AI video generation platform that allows you to transform text and images into high-quality videos in minutes. Powered by advanced models like Sora 2 and Veo 3.1, it enables creators to bring their visions to life without expensive equipment."
+      "answer": "PodVid is an AI video SaaS built for podcasters. It helps you turn podcast episodes, transcripts, and ideas into captioned clips, audiograms, and short social videos without a traditional editing workflow."
     },
     "commercial": {
-      "question": "Can I use the videos for commercial purposes?",
-      "answer": "Yes! Videos generated with our Pro and Team plans come with a full commercial license, allowing you to use them in your marketing, social media, and commercial projects."
+      "question": "Can I use the videos for my show, clients, or sponsors?",
+      "answer": "Yes. You can use PodVid outputs for your podcast marketing, client work, and sponsored content as long as you have the rights to the source material you upload."
     },
     "aiModels": {
-      "question": "Which AI models do you use?",
-      "answer": "We integrate the industry's best video generation models, including Sora 2, Veo 3.1, and others. We continuously update our platform to include the latest and most capable models available."
+      "question": "What kinds of podcast videos can I make?",
+      "answer": "You can create vertical clips, audiograms, captioned quote videos, and other short-form edits designed for TikTok, Instagram Reels, YouTube Shorts, and similar channels."
     },
     "credits": {
       "question": "How does the credit system work?",
-      "answer": "You use credits to generate videos. Different models and video durations consume different amounts of credits. You can purchase credit packs or subscribe to a monthly plan to receive a steady supply of credits at a discount."
+      "answer": "Credits are used when you generate podcast videos. More demanding outputs or multiple variations consume more credits, so you can start small and scale up once a workflow works for your show."
     },
     "refund": {
-      "question": "Do you offer refunds?",
-      "answer": "We offer a satisfaction guarantee. If a generated video fails due to a system error, we will refund the credits. For subscription payments, please contact our support team within 7 days if you're not satisfied."
+      "question": "What if a generation fails?",
+      "answer": "If PodVid fails because of a system issue, we will credit the failed generation back whenever possible. If something looks wrong, contact support and we will help review it."
     },
     "support": {
       "question": "How can I get support?",
-      "answer": "Our dedicated support team is available 24/7. You can reach us via the contact form on our website or by emailing support@podvid.uk."
+      "answer": "Email us at support@podvid.uk and include your episode or generation details. We can help with prompt setup, workflow questions, and any account issues."
     }
   },
   "Footer": {
     "product": "Product",
     "company": "Company",
     "legal": "Legal",
+    "tagline": "Turn podcast episodes into short, shareable videos with AI.",
+    "madeWith": "Made with",
+    "byTeam": "by PodVid Team",
     "copyright": "© {year} PodVid. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "cookie": "Cookie Policy"
+    "cookie": "Cookie Policy",
+    "links": {
+      "imageToVideo": "Image to Video",
+      "textToVideo": "Text to Video",
+      "referenceToVideo": "Reference to Video",
+      "pricing": "Pricing"
+    }
   },
   "Credits": {
     "title": "Credits",
