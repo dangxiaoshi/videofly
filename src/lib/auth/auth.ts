@@ -19,6 +19,21 @@ import * as schema from "@/db/schema";
 import { env } from "./env.mjs";
 import { eq } from "drizzle-orm";
 
+const appOrigin = new URL(env.NEXT_PUBLIC_APP_URL).origin;
+const appHostname = new URL(appOrigin).hostname;
+const isLocalhost =
+  appHostname === "localhost" || appHostname === "127.0.0.1";
+const rootDomain = appHostname.replace(/^www\./, "");
+
+const trustedOrigins = Array.from(
+  new Set([
+    appOrigin,
+    !isLocalhost ? `https://${rootDomain}` : null,
+    !isLocalhost ? `https://www.${rootDomain}` : null,
+    !isLocalhost ? "https://videofly-beta.vercel.app" : null,
+  ].filter((origin): origin is string => Boolean(origin)))
+);
+
 const toLogString = (value: unknown) => {
   if (value === null || value === undefined) return String(value);
   if (typeof value === "string") return value;
@@ -263,10 +278,19 @@ if (env.CREEM_API_KEY) {
 }
 
 export const auth = betterAuth({
-  baseURL: env.NEXT_PUBLIC_APP_URL,
+  baseURL: appOrigin,
   basePath: "/api/auth",
   secret: env.BETTER_AUTH_SECRET,
   logger: debugLogger,
+  trustedOrigins,
+  advanced: {
+    crossSubDomainCookies: isLocalhost
+      ? undefined
+      : {
+        enabled: true,
+        domain: rootDomain,
+      },
+  },
 
   // Drizzle adapter with schema for Better Auth
   database: drizzleAdapter(db, {
