@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 import { i18n } from "@/config/i18n-config";
-import { execSync } from "child_process";
-import { readdir, stat } from "fs/promises";
-import { join } from "path";
+import { execSync } from "node:child_process";
+import { readdir, stat } from "node:fs/promises";
+import { join } from "node:path";
 
 // Allow sitemap to be revalidated every hour (3600 seconds)
 export const revalidate = 3600;

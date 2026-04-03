@@ -4,7 +4,6 @@ import type {
   VideoTaskResponse,
 } from "../types";
 
-// @ts-expect-error - no types for this package
 import Signer from "@volcengine/openapi/lib/base/sign";
 
 const REGION = "cn-north-1";

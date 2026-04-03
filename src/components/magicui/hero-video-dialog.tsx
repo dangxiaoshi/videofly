@@ -82,7 +82,7 @@ export function HeroVideoDialog({
               className="relative mx-4 aspect-video w-full max-w-4xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
+              <button type="button"
                 onClick={() => setIsVideoOpen(false)}
                 className="absolute -top-12 right-0 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               >

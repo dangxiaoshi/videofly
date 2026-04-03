@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "biome check .",
     "format": "biome format --write .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",

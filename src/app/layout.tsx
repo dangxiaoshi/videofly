@@ -1,4 +1,3 @@
-import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 import { getLocale, getMessages } from "next-intl/server";
 
@@ -18,19 +17,11 @@ import { PlausibleAnalytics } from "@/components/plausible-provider";
 import { i18n } from "@/config/i18n-config";
 import { siteConfig } from "@/config/site";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 // Font files can be colocated inside of `pages`
 const fontHeading = localFont({
   src: "../styles/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 });
-
-
-
 export function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
 }
@@ -118,7 +109,6 @@ export default async function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
           fontHeading.variable,
         )}
       >

@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "contentlayer.config.ts"
+  ],
+  "exclude": [
+    ".next",
+    "node_modules",
+    "apps",
+    "packages",
+    "tooling",
+    "turbo",
+    "docs",
+    "drizzle.config.ts"
+  ]
+}

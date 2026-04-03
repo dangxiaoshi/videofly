@@ -196,7 +196,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <button type="button" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Globe className="h-4 w-4" />
                   <span className="hidden sm:inline">{locale.toUpperCase()}</span>
                 </button>
@@ -225,7 +225,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
             {/* Theme Toggle */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
+                <button type="button"
                   className="flex items-center justify-center h-8 w-8 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                   aria-label="Toggle theme"
                 >
@@ -264,7 +264,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <button type="button" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center ring-2 ring-background/20">
                       <span className="text-sm font-medium">
                         {user.name?.[0]?.toUpperCase() || user.email?.[0]?.toUpperCase()}
@@ -413,7 +413,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
                   {/* Language */}
                   <div className="flex items-center gap-3 p-2">
                     <Globe className="h-4 w-4" />
-                    <button
+                    <button type="button"
                       onClick={() => switchLocale("en")}
                       className={cn(
                         "text-sm transition-colors",
@@ -426,7 +426,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
                       English
                     </button>
                     <span className="text-muted-foreground">/</span>
-                    <button
+                    <button type="button"
                       onClick={() => switchLocale("zh")}
                       className={cn(
                         "text-sm transition-colors",
@@ -445,7 +445,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
                     <Sun className="h-4 w-4 shrink-0" />
                     <div className="flex items-center gap-1">
                       {(["light", "dark", "system"] as const).map((mode) => (
-                        <button
+                        <button type="button"
                           key={mode}
                           onClick={() => setTheme(mode)}
                           className={cn(
@@ -484,7 +484,7 @@ export function LandingHeader({ user }: { user?: User | null }) {
                       >
                         {t('Header.settings')}
                       </LocaleLink>
-                      <button
+                      <button type="button"
                         onClick={handleSignOut}
                         className="p-2 text-left text-destructive hover:bg-destructive/10 rounded-md transition-colors"
                       >
