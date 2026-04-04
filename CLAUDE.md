@@ -1,8 +1,8 @@
-# VideoFly - AI Video Generation Platform
+# PodVid - AI Video Generation Platform
 
 ## Project Overview
 
-VideoFly is a SaaS platform for AI-powered video generation. It's built as a standalone Next.js application with AI video generation capabilities.
+PodVid is a SaaS platform for AI-powered video generation. It's built as a standalone Next.js application with AI video generation capabilities.
 
 ## Tech Stack
 
@@ -17,7 +17,7 @@ VideoFly is a SaaS platform for AI-powered video generation. It's built as a sta
 ## Project Structure
 
 ```
-videofly/
+podvid/
 ├── src/
 │   ├── app/                  # Next.js App Router pages
 │   │   ├── api/              # API Routes

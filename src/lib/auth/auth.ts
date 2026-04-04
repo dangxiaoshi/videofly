@@ -30,7 +30,7 @@ const trustedOrigins = Array.from(
     appOrigin,
     !isLocalhost ? `https://${rootDomain}` : null,
     !isLocalhost ? `https://www.${rootDomain}` : null,
-    !isLocalhost ? "https://videofly-beta.vercel.app" : null,
+    !isLocalhost ? "https://podvid-beta.vercel.app" : null,
   ].filter((origin): origin is string => Boolean(origin)))
 );
 

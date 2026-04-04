@@ -1,6 +1,6 @@
 {
-  "name": "VideoFly",
-  "short_name": "VideoFly",
+  "name": "PodVid",
+  "short_name": "PodVid",
   "description": "AI-powered video generation platform",
   "start_url": "/",
   "display": "standalone",

@@ -1,4 +1,4 @@
-# VideoFly 🎬
+# PodVid 🎬
 
 一个生产级 AI 视频生成 SaaS 模板，基于 Next.js 15 构建，支持 Sora 2、Veo 3.1 等先进 AI 模型。
 
@@ -46,7 +46,7 @@
 
 ```bash
 # 克隆仓库（使用模板仓库）
-git clone https://github.com/zifeixu85/videofly-template.git your-project
+git clone https://github.com/dangxiaoshi/podvid.git your-project
 cd your-project
 
 # 安装依赖
@@ -67,12 +67,12 @@ pnpm dev
 
 ### 一键部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zifeixu85/videofly-template)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dangxiaoshi/podvid)
 
 ## 📁 项目结构
 
 ```
-videofly/
+podvid/
 ├── src/
 │   ├── app/                  # Next.js App Router 页面
 │   │   ├── api/              # API 路由
@@ -164,7 +164,7 @@ RESEND_FROM='noreply@yourdomain.com'
 
 ```bash
 # 添加上游仓库
-git remote add upstream https://github.com/zifeixu85/videofly-template.git
+git remote add upstream https://github.com/dangxiaoshi/podvid.git
 
 # 获取上游更新
 git fetch upstream
@@ -180,7 +180,7 @@ git push origin main
 
 ```bash
 # 添加上游仓库
-git remote add upstream https://github.com/zifeixu85/videofly-template.git
+git remote add upstream https://github.com/dangxiaoshi/podvid.git
 
 # 查看上游变更
 git diff upstream/main...main
