@@ -42,11 +42,11 @@ import type {
 
 export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   // ============================================================================
-  // Seedance Series (Primary - APImart)
+  // Studio model series
   // ============================================================================
   {
     id: "seedance-1.5-pro",
-    name: "Seedance 1.5 Pro",
+    name: "Studio Model Pro",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1754894158793-1e7ef687-c3c1-4f44-8b06-d044a8121f66.svg",
     color: "#10b981",
     description: "Text/Image/Frames to video with audio",
@@ -64,7 +64,7 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
   {
     id: "seedance-1.0-pro-fast",
-    name: "Seedance 1.0 Fast",
+    name: "Studio Model Fast",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1754894158793-1e7ef687-c3c1-4f44-8b06-d044a8121f66.svg",
     color: "#34d399",
     description: "Fast video generation, lower cost",
@@ -81,7 +81,7 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
   {
     id: "seedance-1.0-pro-quality",
-    name: "Seedance 1.0 Quality",
+    name: "Studio Model Quality",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1754894158793-1e7ef687-c3c1-4f44-8b06-d044a8121f66.svg",
     color: "#059669",
     description: "Highest quality video generation",
@@ -98,14 +98,14 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
 
   // ============================================================================
-  // Volcengine (火山引擎直连)
+  // Alternative high-resolution model
   // ============================================================================
   {
     id: "jimeng-video-3.0-1080p",
-    name: "即梦视频 3.0",
+    name: "Cinema Model 3.0",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1754894158793-1e7ef687-c3c1-4f44-8b06-d044a8121f66.svg",
     color: "#ff6a00",
-    description: "即梦同源文生视频，1080P 高清",
+    description: "High-resolution cinematic video generation",
     maxDuration: "8 sec",
     creditCost: 20,
     durations: ["5s", "8s"],
@@ -122,10 +122,10 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   // ============================================================================
   {
     id: "sora-2",
-    name: "Sora 2",
+    name: "Lite Model",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/test/cm3pol28q0000ojuuyeo77e36/image/1759998830447-10c6484e-786d-4d05-a2c4-f0c929b1042b.svg",
     color: "#000000",
-    description: "OpenAI's advanced video generation model",
+    description: "Fast prompt-to-video generation for lightweight drafts",
     maxDuration: "15 sec",
     creditCost: 2,
     durations: ["10s", "15s"],
@@ -134,10 +134,10 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
   {
     id: "wan2.6",
-    name: "Wan 2.6",
+    name: "Motion Model",
     icon: "https://videocdn.pollo.ai/model-icon/svg/Group.svg",
     color: "#ff6a00",
-    description: "Text/Image/Reference video to video with audio support",
+    description: "Long-form scene generation with audio support",
     maxDuration: "10 sec",
     creditCost: 25,
     durations: ["5s", "10s"],
@@ -148,10 +148,10 @@ export const DEFAULT_VIDEO_MODELS: VideoModel[] = [
   },
   {
     id: "veo-3.1",
-    name: "Veo 3.1",
+    name: "Visual Model",
     icon: "https://videocdn.pollo.ai/web-cdn/pollo/production/cm3po9yyf0003oh0c2iyt8ajy/image/1753259785486-de7c53b0-9576-4d3e-a76a-a94fcac57bf1.svg",
     color: "#4285f4",
-    description: "Google's video generation with reference support",
+    description: "Reference-friendly video generation for polished outputs",
     maxDuration: "8 sec",
     creditCost: 10,
     durations: ["8s"],

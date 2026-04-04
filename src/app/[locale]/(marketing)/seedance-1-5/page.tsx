@@ -16,8 +16,12 @@ export async function generateMetadata({
   const alternates = buildAlternates(`/${pathSegment}`, locale);
 
   return {
-    title: "Seedance 1.5 - PodVid",
+    title: "Studio Model - PodVid",
     description: "Professional AI video generation",
+    robots: {
+      index: false,
+      follow: false,
+    },
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,
@@ -32,7 +36,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Seedance 1.5
+          Studio Model
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
           Coming soon...

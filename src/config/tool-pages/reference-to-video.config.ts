@@ -92,14 +92,8 @@ export const referenceToVideoConfig: ToolPageConfig = {
     ],
 
     supportedModels: [
-      { name: "Seedance 1.5 Pro", provider: "ByteDance", color: "#10b981" },
+      { name: "Studio Model Pro", provider: "PodVid", color: "#10b981" },
     ],
-
-    stats: {
-      videosGenerated: "100K+",
-      usersCount: "15K+",
-      avgRating: 4.7,
-    },
   },
 
   // 多语言 key 前缀

@@ -16,8 +16,12 @@ export async function generateMetadata({
   const alternates = buildAlternates(`/${pathSegment}`, locale);
 
   return {
-    title: "Veo 3.1 - PodVid",
-    description: "High-quality video generation by Google DeepMind",
+    title: "Visual Model - PodVid",
+    description: "Reference-friendly video generation for polished visual outputs",
+    robots: {
+      index: false,
+      follow: false,
+    },
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,
@@ -32,10 +36,10 @@ export default async function ModelPage({ params }: ModelPageProps) {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Veo 3.1
+          Visual Model
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Coming soon...
+          Reference-friendly video generation for polished visual outputs
         </p>
         <div className="flex justify-center gap-4">
           <a

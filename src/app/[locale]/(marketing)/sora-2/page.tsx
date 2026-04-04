@@ -7,11 +7,23 @@ interface ModelPageProps {
   }>;
 }
 
-const modelInfo: Record<string, { name: string; provider: string; description: string }> = {
-  "sora-2": { name: "Sora 2", provider: "OpenAI", description: "Create stunning videos from text prompts with Sora 2" },
-  "veo-3-1": { name: "Veo 3.1", provider: "Google", description: "High-quality video generation by Google DeepMind" },
-  "seedance-1-5": { name: "Seedance 1.5", provider: "ByteDance", description: "Professional AI video generation" },
-  "wan-2-6": { name: "Wan 2.6", provider: "Alibaba", description: "Advanced video generation model" },
+const modelInfo: Record<string, { name: string; description: string }> = {
+  "sora-2": {
+    name: "Lite Model",
+    description: "Fast prompt-to-video generation for lightweight creative drafts",
+  },
+  "veo-3-1": {
+    name: "Visual Model",
+    description: "Reference-friendly video generation for polished visual outputs",
+  },
+  "seedance-1-5": {
+    name: "Studio Model",
+    description: "Balanced video generation for everyday creative work",
+  },
+  "wan-2-6": {
+    name: "Motion Model",
+    description: "Long-form scene generation with flexible framing options",
+  },
 };
 const pathSegment = "sora-2";
 
@@ -23,6 +35,10 @@ export async function generateMetadata({ params }: ModelPageProps) {
   return {
     title: `${info?.name || "Model"} - PodVid`,
     description: info?.description || "AI Video Generation Platform",
+    robots: {
+      index: false,
+      follow: false,
+    },
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,
@@ -34,7 +50,8 @@ export default async function ModelPage({ params }: ModelPageProps) {
   const { locale } = await params;
 
   // Get the model name from the file path (we'll use a simpler approach)
-  const modelName = modelInfo[pathSegment]?.name || "Model";
+  const info = modelInfo[pathSegment];
+  const modelName = info?.name || "Model";
 
   return (
     <div className="container mx-auto px-4 py-20">
@@ -43,7 +60,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
           {modelName}
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Coming soon...
+          {info?.description || "Coming soon..."}
         </p>
         <div className="flex justify-center gap-4">
           <a

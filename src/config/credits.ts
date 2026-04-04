@@ -156,7 +156,7 @@ export const CREDITS_CONFIG = {
         const baseConfigs: Record<string, Omit<ModelConfig, "creditCost">> = {
           "sora-2": {
             id: "sora-2",
-            name: "Sora 2",
+            name: "Lite Model",
             provider: "evolink" as const,
             description: "models.sora2.description",
             supportImageToVideo: true,
@@ -166,7 +166,7 @@ export const CREDITS_CONFIG = {
           },
           "wan2.6": {
             id: "wan2.6",
-            name: "Wan 2.6",
+            name: "Motion Model",
             provider: "evolink" as const,
             description: "models.wan26.description",
             supportImageToVideo: true,
@@ -177,7 +177,7 @@ export const CREDITS_CONFIG = {
           },
           "veo-3.1": {
             id: "veo-3.1",
-            name: "Veo 3.1",
+            name: "Visual Model",
             provider: "evolink" as const,
             description: "models.veo31.description",
             supportImageToVideo: true,
@@ -187,7 +187,7 @@ export const CREDITS_CONFIG = {
           },
           "seedance-1.5-pro": {
             id: "seedance-1.5-pro",
-            name: "Seedance 1.5 Pro",
+            name: "Studio Model Pro",
             provider: "apimart" as const,
             description: "models.seedance.description",
             supportImageToVideo: true,
@@ -198,7 +198,7 @@ export const CREDITS_CONFIG = {
           },
           "seedance-1.0-pro-fast": {
             id: "seedance-1.0-pro-fast",
-            name: "Seedance 1.0 Pro Fast",
+            name: "Studio Model Fast",
             provider: "apimart" as const,
             description: "models.seedance10fast.description",
             supportImageToVideo: true,
@@ -209,7 +209,7 @@ export const CREDITS_CONFIG = {
           },
           "seedance-1.0-pro-quality": {
             id: "seedance-1.0-pro-quality",
-            name: "Seedance 1.0 Pro Quality",
+            name: "Studio Model Quality",
             provider: "apimart" as const,
             description: "models.seedance10quality.description",
             supportImageToVideo: true,
@@ -220,7 +220,7 @@ export const CREDITS_CONFIG = {
           },
           "jimeng-video-3.0-1080p": {
             id: "jimeng-video-3.0-1080p",
-            name: "即梦视频 3.0 720P",
+            name: "Cinema Model 3.0",
             provider: "volcengine" as const,
             description: "models.jimeng30.description",
             supportImageToVideo: true,

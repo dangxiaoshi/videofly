@@ -8,15 +8,13 @@ export const imageToVideoConfig: ToolPageConfig = {
   // SEO 配置
   seo: {
     title: "Image to Video - Transform Photos into AI Videos",
-    description: "Convert your images into stunning videos using AI. Upload any photo and watch it come to life with smooth, realistic motion powered by Seedance AI models.",
+    description: "Convert your images into stunning videos using AI. Upload any photo and watch it come to life with smooth, realistic motion powered by advanced video models.",
     keywords: [
       "image to video",
       "photo animation",
       "ai video generator",
       "picture to video",
       "image animation",
-      "seedance",
-      "seedance 1.5",
     ],
     ogImage: "/og-image-to-video.jpg",
   },
@@ -94,16 +92,10 @@ export const imageToVideoConfig: ToolPageConfig = {
     ],
 
     supportedModels: [
-      { name: "Seedance 1.5 Pro", provider: "ByteDance", color: "#10b981" },
-      { name: "Seedance 1.0 Fast", provider: "ByteDance", color: "#34d399" },
-      { name: "Seedance 1.0 Quality", provider: "ByteDance", color: "#059669" },
+      { name: "Studio Model Pro", provider: "PodVid", color: "#10b981" },
+      { name: "Studio Model Fast", provider: "PodVid", color: "#34d399" },
+      { name: "Studio Model Quality", provider: "PodVid", color: "#059669" },
     ],
-
-    stats: {
-      videosGenerated: "500K+",
-      usersCount: "50K+",
-      avgRating: 4.8,
-    },
   },
 
   // 多语言 key 前缀

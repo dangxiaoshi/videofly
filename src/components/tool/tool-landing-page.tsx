@@ -15,7 +15,7 @@
 
 "use client";
 
-import { Play, ArrowRight, Sparkles, Check, Users, Video } from "lucide-react";
+import { Play, ArrowRight, Sparkles, Check } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/components/ui";
@@ -215,7 +215,7 @@ export function ToolLandingPage({
               transition={{ duration: 0.5, delay: 0.3 }}
               className="space-y-4"
             >
-              <h3 className="text-lg font-semibold text-center">Powered by Leading AI Models</h3>
+              <h3 className="text-lg font-semibold text-center">Built with advanced video generation models</h3>
               <div className="flex flex-wrap justify-center gap-3">
                 {landing.supportedModels.map((model, index: number) => (
                   <motion.div
@@ -234,10 +234,7 @@ export function ToolLandingPage({
                         className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: model.color }}
                       />
-                      <div className="text-sm">
-                        <div className="font-medium">{model.name}</div>
-                        <div className="text-xs text-muted-foreground">{model.provider}</div>
-                      </div>
+                      <div className="text-sm font-medium">{model.name}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -246,53 +243,13 @@ export function ToolLandingPage({
           </BlurFade>
         )}
 
-        {/* Stats Section (optional) */}
-        {landing.stats && (
-          <BlurFade delay={0.4} inView>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-3 gap-4 py-8"
-            >
-              {landing.stats.videosGenerated && (
-                <div className="text-center space-y-1">
-                  <div className="flex items-center justify-center gap-2 text-2xl font-bold">
-                    <Video className="h-5 w-5 text-blue-500" />
-                    {landing.stats.videosGenerated}
-                  </div>
-                  <div className="text-xs text-muted-foreground">Videos Generated</div>
-                </div>
-              )}
-              {landing.stats.usersCount && (
-                <div className="text-center space-y-1">
-                  <div className="flex items-center justify-center gap-2 text-2xl font-bold">
-                    <Users className="h-5 w-5 text-purple-500" />
-                    {landing.stats.usersCount}
-                  </div>
-                  <div className="text-xs text-muted-foreground">Happy Users</div>
-                </div>
-              )}
-              {landing.stats.avgRating && (
-                <div className="text-center space-y-1">
-                  <div className="text-2xl font-bold text-yellow-500">
-                    {landing.stats.avgRating} ★
-                  </div>
-                  <div className="text-xs text-muted-foreground">Average Rating</div>
-                </div>
-              )}
-            </motion.div>
-          </BlurFade>
-        )}
-
         {/* Bottom CTA */}
-        <BlurFade delay={0.5} inView>
+        <BlurFade delay={0.4} inView>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center pt-8 border-t border-border"
           >
             <p className="text-muted-foreground mb-4">

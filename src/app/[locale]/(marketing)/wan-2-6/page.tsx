@@ -16,8 +16,12 @@ export async function generateMetadata({
   const alternates = buildAlternates(`/${pathSegment}`, locale);
 
   return {
-    title: "Wan 2.6 - PodVid",
-    description: "Advanced video generation model",
+    title: "Motion Model - PodVid",
+    description: "Long-form scene generation with flexible framing options",
+    robots: {
+      index: false,
+      follow: false,
+    },
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,
@@ -32,10 +36,10 @@ export default async function ModelPage({ params }: ModelPageProps) {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Wan 2.6
+          Motion Model
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Coming soon...
+          Long-form scene generation with flexible framing options
         </p>
         <div className="flex justify-center gap-4">
           <a

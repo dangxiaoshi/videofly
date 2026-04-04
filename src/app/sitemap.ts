@@ -65,7 +65,18 @@ async function scanPages(
           || '/';                                 // 根路径
 
         // 跳过 dashboard、admin 等不需要 SEO 的页面
-        const skipRoutes = ['dashboard', 'admin', 'auth', 'login', 'register', 'settings'];
+        const skipRoutes = [
+          'dashboard',
+          'admin',
+          'auth',
+          'login',
+          'register',
+          'settings',
+          'sora-2',
+          'veo-3-1',
+          'wan-2-6',
+          'seedance-1-5',
+        ];
         if (skipRoutes.some(route => routePath.includes(route))) {
           continue;
         }

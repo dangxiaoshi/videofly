@@ -128,32 +128,6 @@ export function CTASection() {
                     </LocaleLink>
 
                   </div>
-
-                  {/* 社交证明 - 头像 (Hidden for audit) */}
-                  {/* <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex items-center gap-4 pt-4"
-                  >
-                    <AvatarCircles
-                      numPeople={500000}
-                      avatarUrls={avatarUrls}
-                      className="justify-start"
-                    />
-                    <div className="text-sm">
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">4.9/5</span>{" "}
-                        {t("from")} 2,000+ {t("reviews")}
-                      </p>
-                    </div>
-                  </motion.div> */}
                 </div>
 
                 {/* 右侧: 预览卡片 */}
