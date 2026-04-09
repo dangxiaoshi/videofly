@@ -185,7 +185,7 @@ export class VideoService {
 
     let freezeResult: { success: boolean; holdId: number };
 
-    if (process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production") {
+    if (process.env.IS_DEBUG === "true") {
       freezeResult = { success: true, holdId: 0 };
     } else {
       try {
@@ -273,7 +273,7 @@ export class VideoService {
         creditsUsed: creditsRequired,
       };
     } catch (error) {
-      if (!(process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production")) {
+      if (process.env.IS_DEBUG !== "true") {
         await creditService.release(videoResult.uuid);
       }
 
@@ -471,7 +471,7 @@ export class VideoService {
         console.warn("Storage upload failed, using original URL:", storageError);
       }
 
-      if (!(process.env.IS_DEBUG === "true" && process.env.NODE_ENV !== "production")) {
+      if (process.env.IS_DEBUG !== "true") {
         await creditService.settle(videoUuid);
       }
 

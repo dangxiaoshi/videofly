@@ -388,24 +388,26 @@ export function ToolPageLayout({
 
   // 处理生成提交
   const handleSubmit = useCallback(async (data: GeneratorData) => {
-    // 检查登录
-    if (!user) {
+    // 检查登录（OWNER_MODE 下跳过，由后端用 OWNER_EMAIL 账号处理）
+    if (!user && process.env.NEXT_PUBLIC_OWNER_MODE !== "true") {
       router.push(`/${locale}/login`);
       return;
     }
 
-    // 检查积分
-    const requiredCredits = data.estimatedCredits || 0;
-    const availableCredits = balance?.availableCredits ?? 0;
+    // 检查积分（OWNER_MODE 下跳过，后端 IS_DEBUG 会跳过扣除）
+    if (process.env.NEXT_PUBLIC_OWNER_MODE !== "true") {
+      const requiredCredits = data.estimatedCredits || 0;
+      const availableCredits = balance?.availableCredits ?? 0;
 
-    if (availableCredits < requiredCredits) {
-      // 打开升级弹窗
-      openModal({
-        reason: "insufficient_credits",
-        requiredCredits,
-      });
-      return;
+      if (availableCredits < requiredCredits) {
+        openModal({
+          reason: "insufficient_credits",
+          requiredCredits,
+        });
+        return;
+      }
     }
+    const requiredCredits = data.estimatedCredits || 0;
 
     // 乐观更新：立即冻结积分（UI 立即反映变化）
     optimisticFreeze(requiredCredits);
